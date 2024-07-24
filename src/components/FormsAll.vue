@@ -1,5 +1,6 @@
 <script setup>
 import { reactive, ref } from 'vue';
+import SubmitForm from './SubmitForm.vue';
 const linguagens = ref('');
 
 const mostrarResult = ref(true)
@@ -12,8 +13,9 @@ function addlang() {
         linguagens.value = ''
         mostrarResult.value = !mostrarResult.value
     }
-
+    console.log(infos)
 }
+
 const infos = reactive({
     nome: '',
     email: '',
@@ -119,7 +121,7 @@ const states = reactive([
                 <input type="text" v-model="linguagens">
 
                 <div class="botao">
-                    <button @click="addlang">Enviar</button>
+                    <button @click="addlang">Salvar</button>
 
                 </div>
             </div>
@@ -132,19 +134,8 @@ const states = reactive([
         </div>
     </div>
     <div v-else class="result">
-        <h2>Informações</h2>
-        <p>Nome:{{ infos.nome }}</p>
-        <p>E-mail:{{ infos.email }}</p>
-        <p>Senha:{{ infos.senha }} </p>
-        <p>Data de nascimento: {{ infos.data }}</p>
-        <p>Endereço: {{ infos.endereco }}</p>
-        <p>Cidade: {{ infos.cidade }}</p>
-        <p>Hobbies: {{ infos.hobbies }}</p>
-        <p>Biografia:{{ infos.biografia }}</p>
-        <div class="language">
-            <p>Linguagens:</p>
-            <p v-for="langs in infos.linguagens" :key="langs"> {{ langs }}</p>
-        </div>
+            <SubmitForm :nome="infos.nome" :email="infos.email" :senha="infos.senha" :data="infos.data" :endereco="infos.endereco" :cidade="infos.cidade" :hobbies="infos.hobbies" :biografia="infos.biografia" :linguagens="infos.linguagens"/>
+       
     </div>  
 </template>
 <style scoped>
