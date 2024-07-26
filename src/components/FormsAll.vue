@@ -221,7 +221,8 @@ label {
     align-items: center;
     flex-direction: column;
     gap: 25px;
-    color: #FFF
+    color: #FFF;
+    background-color: #223243;
 }
 
 

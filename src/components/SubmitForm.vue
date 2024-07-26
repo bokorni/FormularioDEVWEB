@@ -60,7 +60,8 @@ defineProps({
       <p>Cidade: {{ cidade }}</p>
       <p>Hobbies:{{ hobbies }}</p>
       <p>Biografia: {{ biografia }}</p>
-      <p>Linguagens Preferidas: <span v-for="linguagem, i in linguagens" :key="i">{{ linguagem }}</span></p>
+      <p>Linguagens Preferidas: <span v-for="linguagem, i in linguagens" :key="i">{{ linguagem }}</span> </p>
+      <button @click="$emit('voltar', mostrarResult )">Voltar</button>
     </div>
 
 
