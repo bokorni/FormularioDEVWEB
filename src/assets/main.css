@@ -1,13 +1,23 @@
 @import './base.css';
 @import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100%;
+  width: 100%;
   font-weight: normal;
   font-family: Amarante, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 2000px;
+  height: auto;
 }
+
+html {
+  width: 100%;
+}
+
 
  body{
   background-color: black ;
+  width: 100%;
  }

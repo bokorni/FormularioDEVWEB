@@ -43,6 +43,10 @@ defineProps({
   },
 })
 
+const emits = defineEmits([
+  'voltar'
+])
+
 
 
 
@@ -61,7 +65,7 @@ defineProps({
       <p>Hobbies:{{ hobbies }}</p>
       <p>Biografia: {{ biografia }}</p>
       <p>Linguagens Preferidas: <span v-for="linguagem, i in linguagens" :key="i">{{ linguagem }}</span> </p>
-      <button>Voltar</button>
+      <button @click="emits('voltar')">Voltar</button>
     </div>
 
 
@@ -70,9 +74,13 @@ defineProps({
   </div>
 </template>
 <style scoped>
-
 .resultado {
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
 }
 
 button {
@@ -85,5 +93,32 @@ button {
   color: rgb(20, 250, 70);
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
+  font-family: Amarante, serif;
+}
+.resultado p{
+  color: rgb(20, 250, 70);
+}
+.botao {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  padding: 40px;
+  border-radius: 20px;
+  border: 8px solid #223243;
+  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  color: #FFF;
+  background-color: #223243;
 }
 </style>

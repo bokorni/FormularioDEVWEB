@@ -10,7 +10,6 @@ function addlang() {
     }
     else {
         infos.linguagens.push(linguagens.value)
-        linguagens.value = ''
         mostrarResult.value = !mostrarResult.value
     }
     console.log(infos)
@@ -127,16 +126,16 @@ const states = reactive([
             </div>
 
         </div>
-        <div class="result">
+        <div class="footer">
 
-            <p>@bokorn1</p>
+            <p>Todos os direitos reservados Bokorni Corporation©</p>
 
         </div>
     </div>
     <div v-else class="result">
         <SubmitForm :nome="infos.nome" :email="infos.email" :senha="infos.senha" :data="infos.data"
             :endereco="infos.endereco" :cidade="infos.cidade" :hobbies="infos.hobbies" :biografia="infos.biografia"
-            :linguagens="infos.linguagens" />
+            :linguagens="infos.linguagens" @voltar="mostrarResult = !mostrarResult"/>
 
     </div>
 </template>
@@ -151,19 +150,19 @@ const states = reactive([
     
     display: flex;
     justify-content: center;
-    padding: 3vw;
+    padding: 20px;
     border: none;
     color: rgb(20, 250, 70);
 
 }
 
 .container {
-    width: 50vw;
-    padding: 40px;
+    width: 100%;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 h2 {
@@ -180,7 +179,7 @@ label {
 
 .container,
 .formulario {
-    width: 60vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -198,7 +197,7 @@ label {
 .formulario,
 .row {
     position: relative;
-    width: 100vw;
+    width: 80%;
 
 }
 
@@ -210,15 +209,22 @@ label {
     width: 80%;
 }
 
+.footer {
+    background-color: #223243;
+    width: 80%;
+    height: 150px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(20, 250, 70);
+    border-radius: 20px;
+}
+
 
 .result {
     width: 50vw;
     padding: 40px;
-    border-radius: 20px;
-    border: 8px solid #223243;
-    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35),
-        inset -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35),
-        inset -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
     width: 60vw;
     display: flex;
     justify-content: center;
@@ -226,7 +232,8 @@ label {
     flex-direction: column;
     gap: 25px;
     color: #FFF;
-    background-color: #223243;
+
+    height: 100vh;
 }
 
 
@@ -245,7 +252,7 @@ label {
     box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
     transition: 0.5s;
     outline: none;
-
+    
 }
 
 input,
@@ -258,8 +265,6 @@ select {
     border: none;
     color: rgb(255, 255, 255);
 }
-
-;
 
 
 .check {
