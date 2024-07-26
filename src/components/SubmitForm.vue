@@ -61,7 +61,7 @@ defineProps({
       <p>Hobbies:{{ hobbies }}</p>
       <p>Biografia: {{ biografia }}</p>
       <p>Linguagens Preferidas: <span v-for="linguagem, i in linguagens" :key="i">{{ linguagem }}</span> </p>
-      <button @click="$emit('voltar', mostrarResult )">Voltar</button>
+      <button>Voltar</button>
     </div>
 
 
@@ -70,7 +70,20 @@ defineProps({
   </div>
 </template>
 <style scoped>
+
 .resultado {
   color: white;
+}
+
+button {
+  background: #223243;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
+  padding: 12px 10px 12px 10px;
+  border: none;
+  color: rgb(20, 250, 70);
+  display: flex;
+  flex-direction: column;
 }
 </style>

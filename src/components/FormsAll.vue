@@ -134,9 +134,11 @@ const states = reactive([
         </div>
     </div>
     <div v-else class="result">
-            <SubmitForm :nome="infos.nome" :email="infos.email" :senha="infos.senha" :data="infos.data" :endereco="infos.endereco" :cidade="infos.cidade" :hobbies="infos.hobbies" :biografia="infos.biografia" :linguagens="infos.linguagens"/>
-       
-    </div>  
+        <SubmitForm :nome="infos.nome" :email="infos.email" :senha="infos.senha" :data="infos.data"
+            :endereco="infos.endereco" :cidade="infos.cidade" :hobbies="infos.hobbies" :biografia="infos.biografia"
+            :linguagens="infos.linguagens" />
+
+    </div>
 </template>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
@@ -146,11 +148,10 @@ const states = reactive([
 }
 
 .botao {
-
+    
     display: flex;
     justify-content: center;
     padding: 3vw;
-
     border: none;
     color: rgb(20, 250, 70);
 
@@ -160,6 +161,9 @@ const states = reactive([
     width: 50vw;
     padding: 40px;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h2 {
